@@ -13,8 +13,10 @@ import java.security.NoSuchAlgorithmException;
  */
 public class PasswordUserCreate {
 
-    public static void hashCredential(String username, String password) {
+    public static void hashCredential() {
         Scanner scanner = new Scanner(System.in);
+        String username;
+        String password;
         String hashPassword;
 
         System.out.println("Hi! this is the tool to creat crendentials");

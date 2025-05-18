@@ -13,12 +13,14 @@ import static java.lang.System.exit;
  */
 public class Login {
 
-    public static void login(String username, String password) {
+    public static void login() {
         Scanner scanner = new Scanner(System.in);
         String hashPassword;
         int count;
         boolean access;
-
+        String username;
+        String password;
+        
         count = 0;
 
         while (count < 3) {
