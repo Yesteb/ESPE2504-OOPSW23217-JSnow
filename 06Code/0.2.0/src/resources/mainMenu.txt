@@ -1,0 +1,17 @@
+Bienvenid@! >^..^<
+Que quieres hacer el dia de hoy?
+
+Seleccione una opcion (1-5):
++------------------------------------+
+| 1 | Gestion de Inventario          |
++------------------------------------+
+| 2 | Generar reportes               |
++---+--------------------------------+
+| 3 | Salida de productos            |
++---+--------------------------------+
+| 4 | Historial de transacciones     |
++---+--------------------------------+
+| 5 | Salir                          |
++---+--------------------------------+
+
+->

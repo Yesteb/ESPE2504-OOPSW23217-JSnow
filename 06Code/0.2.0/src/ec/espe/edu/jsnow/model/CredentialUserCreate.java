@@ -11,14 +11,18 @@ import java.security.NoSuchAlgorithmException;
  *
  * @author yesteb
  */
-public class PasswordUserCreate {
+
+public class CredentialUserCreate {
 
     public static void hashCredential() {
-        Scanner scanner = new Scanner(System.in);
+        Scanner scanner;
         String username;
         String password;
-        String hashPassword;
-
+        String encryptUsername;
+        String encryptPassword;
+        
+        scanner = new Scanner(System.in);
+        
         System.out.println("Hi! this is the tool to creat crendentials");
         System.out.println("You have to enter your new username and password...");
         System.out.println("See you later!...");
@@ -27,11 +31,12 @@ public class PasswordUserCreate {
         username = scanner.nextLine();
         System.out.print("New PassWord: ");
         password = scanner.nextLine();
-
-        hashPassword = hash(password);
+        
+        encryptUsername = hash(username);
+        encryptPassword = hash(password);
 
         try (PrintWriter writer = new PrintWriter(new FileWriter("src/resources/credentials.txt"))) {
-            writer.println(username + "," + hashPassword);
+            writer.println(encryptUsername + "," + encryptPassword);
             System.out.println("Password and username saved successfully...");
         } catch (IOException e) {
             System.out.println("Failed proccess: " + e.getMessage());

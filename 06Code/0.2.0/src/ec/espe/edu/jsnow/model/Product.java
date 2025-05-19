@@ -6,25 +6,24 @@ package ec.espe.edu.jsnow.model;
  * @author yesteb
  */
 public class Product {
-
-    
     private int id;
     private String name;
-    private float price;
+    private double price;
     private int quantityInStock;
-  
+
     @Override
     public String toString() {
         return "Product{" + "id=" + getId() + ", name=" + getName() + ", price=" + getPrice() + ", quantityInStock=" + getQuantityInStock() + '}';
     }
+
     
-    public Product(int id, String name, float price, int quantityInStock){
-    this.id = id;
-    this.name = name;
-    this.price = price;
-    this.quantityInStock = quantityInStock;
-}
-       
+    public Product(int id, String name, double price, int quantityInStock){
+        this.id = id;
+        this.name = name;
+        this.price = price;
+        this.quantityInStock = quantityInStock;
+    }
+    
     /**
      * @return the id
      */
@@ -56,7 +55,7 @@ public class Product {
     /**
      * @return the price
      */
-    public float getPrice() {
+    public double getPrice() {
         return price;
     }
 
@@ -81,8 +80,14 @@ public class Product {
         this.quantityInStock = quantityInStock;
     }
     
-    
-    
+    public String[] toCsvRow(){
+        return new String [] {
+            String.valueOf(id),
+            name,
+            String.valueOf(price),
+            String.valueOf(quantityInStock)
+        };
+    }
 }
 
 

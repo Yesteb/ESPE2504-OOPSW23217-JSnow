@@ -1,6 +1,6 @@
 package ec.espe.edu.jsnow.model;
 
-import static ec.espe.edu.jsnow.model.PasswordUserCreate.hash;
+import static ec.espe.edu.jsnow.model.CredentialUserCreate.hash;
 import java.util.Scanner;
 import java.io.FileReader;
 import java.io.BufferedReader;
@@ -14,16 +14,17 @@ import static java.lang.System.exit;
 public class Login {
 
     public static void login() {
-        Scanner scanner;
-        String hashPassword;
-        int count;
+        Scanner scanner = new Scanner(System.in);
+        byte count;
         boolean access;
         String username;
         String password;
+        String encryptUsername;
+        String encryptPassword;
+        
         
         count = 0;
-        scanner = new Scanner(System.in);
-        
+
         while (count < 3) {
 
             System.out.print("Username: ");
@@ -31,8 +32,9 @@ public class Login {
             System.out.print("Password: ");
             password = scanner.nextLine();
 
-            hashPassword = hash(password);
-
+            encryptUsername = hash(username);
+            encryptPassword = hash(password);
+            
 
             try (BufferedReader reader = new BufferedReader(new FileReader("src/resources/credentials.txt"))) {
                 String lineReader;
@@ -46,28 +48,28 @@ public class Login {
                     String userSave = part[0];
                     String passwordSaveHash = part[1];
 
-                    if (userSave.equals(username) && passwordSaveHash.equals(hashPassword)) {
+                    if (userSave.equals(encryptUsername) && passwordSaveHash.equals(encryptPassword)) {
                         access = true;
                         break;
                     }
                 }
 
                 if (access) {
-                    System.out.println("Login successful!");
+                    System.out.println("Inicio de sesion correcto!...");
                     return;
                 } else {
-                    System.out.println("Wrong credentials...");
-                    System.out.println("Invalid Password or Username...");
+                    System.out.println("Credenciales incorrectas...");
+                    System.out.println("Contraseña o usuario invalidos...");
                     count += 1;
                 }
 
                 if (count == 3) {
-                    System.out.println("Too many failed attempts. Exiting...");
+                    System.out.println("Muchos intentos fallidos. Saliendo...");
                     exit(0);
                 }
 
             } catch (IOException e) {
-                System.out.println("Error, couldn't find the file: " + e.getMessage());
+                System.out.println("Error, no se encontro el archivo: " + e.getMessage());
             }
 
         }

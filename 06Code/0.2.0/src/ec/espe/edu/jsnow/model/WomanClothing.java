@@ -8,6 +8,10 @@ package ec.espe.edu.jsnow.model;
  *
  * @author yesteb
  */
-public class InventoryManager {
-    
+public class WomanClothing extends Product{
+    String size;
+
+    public WomanClothing(int id, String name, float price, int quantityInStock) {
+        super(id, name, price, quantityInStock);
+    }
 }
