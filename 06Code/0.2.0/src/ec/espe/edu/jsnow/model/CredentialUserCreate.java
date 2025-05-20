@@ -8,51 +8,42 @@ import java.io.FileWriter;
 import java.security.NoSuchAlgorithmException;
 
 /**
- *
- * @author yesteb
+ * Clase para crear usuarios con credenciales encriptadas y almacenarlas en un archivo.
+ * Autor: Yesteb JSnow
  */
-
 public class CredentialUserCreate {
 
-    public static void hashCredential() {
-        Scanner scanner;
+    // Método principal para registrar un nuevo usuario
+    public static void registerUser() {
+        Scanner scanner = new Scanner(System.in);
         String username;
         String password;
         String encryptUsername;
         String encryptPassword;
-        
-        scanner = new Scanner(System.in);
-        
-        System.out.println("Hi! this is the tool to creat crendentials");
-        System.out.println("You have to enter your new username and password...");
-        System.out.println("See you later!...");
 
-        System.out.print("New Username: ");
+        System.out.println("=== Registro de Nuevo Usuario ===");
+        System.out.print("Ingrese un nuevo nombre de usuario: ");
         username = scanner.nextLine();
-        System.out.print("New PassWord: ");
+        System.out.print("Ingrese una nueva contraseña: ");
         password = scanner.nextLine();
-        
+
         encryptUsername = hash(username);
         encryptPassword = hash(password);
 
-        try (PrintWriter writer = new PrintWriter(new FileWriter("src/resources/credentials.txt"))) {
+        try (PrintWriter writer = new PrintWriter(new FileWriter("src/resources/credentials.txt", true))) {
             writer.println(encryptUsername + "," + encryptPassword);
-            System.out.println("Password and username saved successfully...");
+            System.out.println("✅ Usuario y contraseña guardados exitosamente.");
         } catch (IOException e) {
-            System.out.println("Failed proccess: " + e.getMessage());
+            System.out.println("❌ Error al guardar las credenciales: " + e.getMessage());
         }
-
     }
 
+    // Método para encriptar con SHA-256
     public static String hash(String input) {
         try {
-            MessageDigest messageDigest;
-            byte[] hashBytes;
-            StringBuilder hexString;
-
-            messageDigest = MessageDigest.getInstance("SHA-256");
-            hashBytes = messageDigest.digest(input.getBytes());
-            hexString = new StringBuilder();
+            MessageDigest messageDigest = MessageDigest.getInstance("SHA-256");
+            byte[] hashBytes = messageDigest.digest(input.getBytes());
+            StringBuilder hexString = new StringBuilder();
 
             for (byte b : hashBytes) {
                 hexString.append(String.format("%02x", b));
@@ -60,9 +51,7 @@ public class CredentialUserCreate {
 
             return hexString.toString();
         } catch (NoSuchAlgorithmException error) {
-            throw new RuntimeException(error);
+            throw new RuntimeException("Error al encriptar: " + error.getMessage());
         }
-
     }
-
 }
