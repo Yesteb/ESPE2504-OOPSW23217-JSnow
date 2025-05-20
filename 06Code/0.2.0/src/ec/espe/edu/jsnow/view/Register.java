@@ -6,14 +6,14 @@ import static ec.espe.edu.jsnow.model.Login.login;
 import static ec.espe.edu.jsnow.model.PrintFiles.printMenu;
 import java.util.Scanner;
 import java.io.IOException;
+import static java.lang.System.exit;
 
 /**
- * Clase que permite registrar usuarios en el sistema JSnow.
- * Autor: Yesteb JSnow
+ * Clase que permite registrar usuarios en el sistema JSnow. Autor: Yesteb JSnow
  */
 public class Register {
 
-    public static void showRegisterMenu() throws IOException {
+    public static boolean showRegisterMenu() throws IOException {
         Scanner scanner = new Scanner(System.in);
         int option;
 
@@ -32,20 +32,24 @@ public class Register {
                     System.out.println("🎉 Registro exitoso. Ahora puede iniciar sesión.");
                     break;
                 case 2:
-                   login();
-        printMenu("src/resources/mainMenu.txt");
-        option = scanner.nextByte();
-        
-        switch(option){
-            case 1: 
-              inventoryMenu();
-                break;
-        }
+                    login();
+                    printMenu("src/resources/mainMenu.txt");
+                    option = scanner.nextByte();
+
+                    switch (option) {
+                        case 1:
+                            inventoryMenu();
+                            break;
+                    }
+                case 3:
+                    exit(0); 
                 default:
                     System.out.println("⚠️ Opción inválida.");
+
             }
 
-        } while (option != 2);
+        } while (option != 3);
+        return false;
     }
 
     static void register() {
