@@ -1,4 +1,4 @@
-GESTION DE INVENTARIO >^..^<
+GESTION DE INVENTARIO 
 
 Seleccione una opcion (1-5):
 +------------------------------------+

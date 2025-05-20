@@ -9,7 +9,8 @@ import java.io.IOException;
 import java.util.Scanner;
 /**
  *
- * @author yesteb
+ * @author yestebasd
+ * @author Jahir Sivinta DCCO ESPE
  */
 public class JSnowSystem {
     public static void main(String[] args) throws IOException {
@@ -17,6 +18,8 @@ public class JSnowSystem {
         byte option;
         
         scanner = new Scanner(System.in);
+        printMenu("src/resources/loginMenu.txt");
+        
         //hashCredential();
         login();
         printMenu("src/resources/mainMenu.txt");

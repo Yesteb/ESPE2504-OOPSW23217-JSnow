@@ -1,4 +1,4 @@
-REGISTRAR NUEVO PRODUCTO >^..^<
+REGISTRAR NUEVO PRODUCTO 
 
 Seleccione una opcion (1-4):
 +------------------------------------+

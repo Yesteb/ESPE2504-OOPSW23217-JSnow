@@ -59,7 +59,7 @@ public class Login {
                     return;
                 } else {
                     System.out.println("Credenciales incorrectas...");
-                    System.out.println("Contraseña o usuario invalidos...");
+                    System.out.println("Nombre de usuario o contraseña incorrectos. Intentalo nuevamente");
                     count += 1;
                 }
 
@@ -69,7 +69,7 @@ public class Login {
                 }
 
             } catch (IOException e) {
-                System.out.println("Error, no se encontro el archivo: " + e.getMessage());
+                System.out.println("Error: el archivo de credenciales no se encontró o no es accesible." + e.getMessage());
             }
 
         }
