@@ -1,0 +1,16 @@
+GESTION DE INVENTARIO 
+
+Seleccione una opcion (1-5):
++------------------------------------+
+| 1 | Registrar nuevo producto       |
++------------------------------------+
+| 2 | Buscar producto                |
++---+--------------------------------+
+| 3 | Registrar venta de producto    |
++---+--------------------------------+
+| 4 | Registrar salida de producto   |
++---+--------------------------------+
+| 5 | Retroceder                     |
++---+--------------------------------+
+
+->
