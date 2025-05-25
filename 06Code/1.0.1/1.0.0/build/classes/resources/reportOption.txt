@@ -1,0 +1,8 @@
+Seleccione una opcion (1-5):
++-----------------------------------------------------+
+| 1 | Generar reporte de registro de productos nuevos |
++-----------------------------------------------------+
+| 2 | Generar reporte de salida de productos          |
++---+---------+---------------------------------------+
+| 3 |  Salir  |
++---+---------+
