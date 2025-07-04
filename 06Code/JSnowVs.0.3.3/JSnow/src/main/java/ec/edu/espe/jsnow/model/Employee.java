@@ -5,13 +5,12 @@ package ec.edu.espe.jsnow.model;
  *
  * @author Yesteb JSnow
  */
-public class Admin extends User{
+public class Employee extends User{
 
-    public Admin(String username) {
-        super(username, "admin");
+    public Employee(String username) {
+        super(username, "employee");
     }
-    
-    
+
     @Override
     public void showDashboard() {
         

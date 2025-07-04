@@ -4,6 +4,8 @@
  */
 package ec.edu.espe.jsnow.view;
 
+import ec.edu.espe.jsnow.model.Inventory;
+
 /**
  *
  * @author Jahir Sivinta Jsnow DCCO ESPE
@@ -240,7 +242,11 @@ public class FrmMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBox3ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+         Inventory inventory;
+         
+         
+         
+         inventory.addProduct();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

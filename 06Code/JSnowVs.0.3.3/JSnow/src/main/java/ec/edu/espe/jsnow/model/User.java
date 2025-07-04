@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package ec.edu.espe.jsnow.model;
 
 /**
@@ -10,46 +7,31 @@ package ec.edu.espe.jsnow.model;
  */
 public abstract class User {
     
-    private String username;
-    private String password;
+    protected String username;
 
-    public User(String username, String password) {
+   
+    protected String role;
+
+    public User(String username, String role) {
         this.username = username;
-        this.password = password;
+        this.role = role;
     }
+    
+
+    
     
     public abstract void showDashboard();
     
-    
-    /**
-     * @return the username
-     */
+
     public String getUsername() {
         return username;
     }
-
-    /**
-     * @param username the username to set
-     */
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    /**
-     * @return the password
-     */
-    public String getPassword() {
-        return password;
-    }
-
-    /**
-     * @param password the password to set
-     */
-    public void setPassword(String password) {
-        this.password = password;
-    }
     
-    
+     public String getRole() {
+        return role;
+    }
+
+
     
     
 }

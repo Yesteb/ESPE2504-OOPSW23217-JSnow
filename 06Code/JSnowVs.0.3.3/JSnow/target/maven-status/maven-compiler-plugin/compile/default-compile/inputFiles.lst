@@ -1,14 +1,14 @@
-C:\Users\Jahir\OneDrive\Documentos\Versionamientro\JSnowVs.0.3.2\JSnow\src\main\java\ec\edu\espe\jsnow\model\Admin.java
-C:\Users\Jahir\OneDrive\Documentos\Versionamientro\JSnowVs.0.3.2\JSnow\src\main\java\ec\edu\espe\jsnow\model\AuthSystem.java
-C:\Users\Jahir\OneDrive\Documentos\Versionamientro\JSnowVs.0.3.2\JSnow\src\main\java\ec\edu\espe\jsnow\model\Employe.java
-C:\Users\Jahir\OneDrive\Documentos\Versionamientro\JSnowVs.0.3.2\JSnow\src\main\java\ec\edu\espe\jsnow\model\Inventory.java
-C:\Users\Jahir\OneDrive\Documentos\Versionamientro\JSnowVs.0.3.2\JSnow\src\main\java\ec\edu\espe\jsnow\model\ManClothes.java
-C:\Users\Jahir\OneDrive\Documentos\Versionamientro\JSnowVs.0.3.2\JSnow\src\main\java\ec\edu\espe\jsnow\model\Product.java
-C:\Users\Jahir\OneDrive\Documentos\Versionamientro\JSnowVs.0.3.2\JSnow\src\main\java\ec\edu\espe\jsnow\model\Report.java
-C:\Users\Jahir\OneDrive\Documentos\Versionamientro\JSnowVs.0.3.2\JSnow\src\main\java\ec\edu\espe\jsnow\model\Sale.java
-C:\Users\Jahir\OneDrive\Documentos\Versionamientro\JSnowVs.0.3.2\JSnow\src\main\java\ec\edu\espe\jsnow\model\TransactionHistory.java
-C:\Users\Jahir\OneDrive\Documentos\Versionamientro\JSnowVs.0.3.2\JSnow\src\main\java\ec\edu\espe\jsnow\model\User.java
-C:\Users\Jahir\OneDrive\Documentos\Versionamientro\JSnowVs.0.3.2\JSnow\src\main\java\ec\edu\espe\jsnow\model\WomanClothes.java
-C:\Users\Jahir\OneDrive\Documentos\Versionamientro\JSnowVs.0.3.2\JSnow\src\main\java\ec\edu\espe\jsnow\view\FrmInterfaz.java
-C:\Users\Jahir\OneDrive\Documentos\Versionamientro\JSnowVs.0.3.2\JSnow\src\main\java\ec\edu\espe\jsnow\view\FrmMenu.java
-C:\Users\Jahir\OneDrive\Documentos\Versionamientro\JSnowVs.0.3.2\JSnow\src\main\java\ec\edu\espe\jsnow\view\FrmSplashScreem.java
+D:\Program Files\jsnowProyectoPOO\06Code\JSnowVs.0.3.3\JSnow\src\main\java\ec\edu\espe\jsnow\controller\DBController.java
+D:\Program Files\jsnowProyectoPOO\06Code\JSnowVs.0.3.3\JSnow\src\main\java\ec\edu\espe\jsnow\model\Admin.java
+D:\Program Files\jsnowProyectoPOO\06Code\JSnowVs.0.3.3\JSnow\src\main\java\ec\edu\espe\jsnow\model\AuthSystem.java
+D:\Program Files\jsnowProyectoPOO\06Code\JSnowVs.0.3.3\JSnow\src\main\java\ec\edu\espe\jsnow\model\Employee.java
+D:\Program Files\jsnowProyectoPOO\06Code\JSnowVs.0.3.3\JSnow\src\main\java\ec\edu\espe\jsnow\model\Inventory.java
+D:\Program Files\jsnowProyectoPOO\06Code\JSnowVs.0.3.3\JSnow\src\main\java\ec\edu\espe\jsnow\model\Product.java
+D:\Program Files\jsnowProyectoPOO\06Code\JSnowVs.0.3.3\JSnow\src\main\java\ec\edu\espe\jsnow\model\Report.java
+D:\Program Files\jsnowProyectoPOO\06Code\JSnowVs.0.3.3\JSnow\src\main\java\ec\edu\espe\jsnow\model\Sale.java
+D:\Program Files\jsnowProyectoPOO\06Code\JSnowVs.0.3.3\JSnow\src\main\java\ec\edu\espe\jsnow\model\TransactionHistory.java
+D:\Program Files\jsnowProyectoPOO\06Code\JSnowVs.0.3.3\JSnow\src\main\java\ec\edu\espe\jsnow\model\User.java
+D:\Program Files\jsnowProyectoPOO\06Code\JSnowVs.0.3.3\JSnow\src\main\java\ec\edu\espe\jsnow\view\FrmAddProduct.java
+D:\Program Files\jsnowProyectoPOO\06Code\JSnowVs.0.3.3\JSnow\src\main\java\ec\edu\espe\jsnow\view\FrmInterfaz.java
+D:\Program Files\jsnowProyectoPOO\06Code\JSnowVs.0.3.3\JSnow\src\main\java\ec\edu\espe\jsnow\view\FrmMenu.java
+D:\Program Files\jsnowProyectoPOO\06Code\JSnowVs.0.3.3\JSnow\src\main\java\ec\edu\espe\jsnow\view\FrmSplashScreem.java
