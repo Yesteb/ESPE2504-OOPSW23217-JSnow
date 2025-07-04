@@ -6,6 +6,7 @@ import com.mongodb.client.MongoDatabase;
 import org.bson.Document;
 import com.mongodb.client.model.Filters;
 import ec.edu.espe.jsnow.controller.DBController;
+import java.awt.Component;
 import javax.swing.JOptionPane;
 import org.mindrot.jbcrypt.BCrypt;
 
@@ -19,7 +20,7 @@ public class AuthSystem {
     }
 
     // Method to user register
-    public boolean register(String username, String password, String role) {
+    public boolean register(String username, String password, String role, Component parentComponent) {
         String hashedPassword;
         Document newUser;
         if (userExists(username)) {
@@ -34,7 +35,7 @@ public class AuthSystem {
                 .append("role", role);
 
         credentialCollection.insertOne(newUser);
-        JOptionPane.showMessageDialog(FrmInterfaz, "Se registro el usuario con exito!...");
+        JOptionPane.showMessageDialog(parentComponent, "Se registro el usuario con exito!...");
         return true;
     }
 
@@ -58,7 +59,7 @@ public class AuthSystem {
             }
         }
 
-        System.out.println("Usuario o contraseña incorrectos.");
+        JOptionPane.showMessageDialog(null, "Intente de nuevo...", "Credenciales incorrectas", JOptionPane.INFORMATION_MESSAGE);
         return null;
     }
 

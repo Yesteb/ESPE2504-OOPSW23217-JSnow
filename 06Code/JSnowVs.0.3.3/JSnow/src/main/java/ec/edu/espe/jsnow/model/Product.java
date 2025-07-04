@@ -50,7 +50,7 @@ public abstract class Product {
     
 
     
-    abstract void updateStock(int quantity);
+
         
     /**
      * @return the dateTime
