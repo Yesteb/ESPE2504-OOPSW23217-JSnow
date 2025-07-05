@@ -242,11 +242,7 @@ public class FrmMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBox3ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-         Inventory inventory;
-         
-         
-         
-         inventory.addProduct();
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
