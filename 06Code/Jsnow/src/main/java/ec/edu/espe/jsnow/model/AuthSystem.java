@@ -6,7 +6,7 @@ import com.mongodb.client.MongoDatabase;
 import org.bson.Document;
 import com.mongodb.client.model.Filters;
 import ec.edu.espe.jsnow.controller.DBController;
-import java.awt.Component;
+
 import javax.swing.JOptionPane;
 import org.mindrot.jbcrypt.BCrypt;
 
@@ -20,11 +20,11 @@ public class AuthSystem {
     }
 
     // Method to user register
-    public boolean register(String username, String password, String role, Component parentComponent) {
+    public boolean register(String username, String password, String role) {
         String hashedPassword;
         Document newUser;
         if (userExists(username)) {
-            JOptionPane.showMessageDialog(parentComponent, "El usuario ya esta registrado!...", "Registro invalido", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "El usuario ya esta registrado!...", "Registro invalido", JOptionPane.ERROR_MESSAGE);
             return false;
         }
 
@@ -35,26 +35,31 @@ public class AuthSystem {
                 .append("role", role);
 
         credentialCollection.insertOne(newUser);
-        JOptionPane.showMessageDialog(parentComponent, "Se registro el usuario con exito!...");
+        JOptionPane.showMessageDialog(null, "Se registro el usuario con exito!...");
         return true;
     }
 
-    // Método para login
+
     public User login(String username, String password) {
         
-        String hashPassword;
+        int attempts;
+        
+        attempts = 0;
+        
+        while(attempts<3){
         Document user;
+        String role;
         
         user = credentialCollection.find(
                 Filters.eq("username", username)
         ).first();
         
-        hashPassword = hashPassword(password);
+        
         
         if (user != null) {
             String storedHashedPassword = user.getString("password");
-            if (checkPassword(hashPassword, storedHashedPassword)) {
-                String role = user.getString("role");
+            if (checkPassword(password, storedHashedPassword)) {
+                role = user.getString("role");
                 
             if ( role.equalsIgnoreCase("admin")){
                 return new Admin(username);
@@ -64,8 +69,12 @@ public class AuthSystem {
                 
             }
         }
-
+        
         JOptionPane.showMessageDialog(null, "Intente de nuevo...", "Credenciales incorrectas", JOptionPane.INFORMATION_MESSAGE);
+        attempts++;
+        }
+        
+        JOptionPane.showMessageDialog(null, "Demasiados intentos fallidos. Acceso denegado.", "Credenciales incorrectas", JOptionPane.ERROR_MESSAGE);
         return null;
     }
 
@@ -74,12 +83,12 @@ public class AuthSystem {
         return credentialCollection.find(Filters.eq("username", username)).first() != null;
     }
 
-    // Hash de contraseña con bcrypt
+    // Hash password
     private String hashPassword(String password) {
         return BCrypt.hashpw(password, BCrypt.gensalt());
     }
 
-    // Verificación de contraseña con bcrypt
+    // check password with Bcrypt
     private boolean checkPassword(String password, String hashed) {
         return BCrypt.checkpw(password, hashed);
     }
