@@ -1,4 +1,3 @@
-
 package ec.edu.espe.jsnow.model;
 
 import com.mongodb.client.MongoCollection;
@@ -39,42 +38,28 @@ public class AuthSystem {
         return true;
     }
 
-
     public User login(String username, String password) {
-        
-        int attempts;
-        
-        attempts = 0;
-        
-        while(attempts<3){
+
         Document user;
         String role;
-        
-        user = credentialCollection.find(
-                Filters.eq("username", username)
-        ).first();
-        
-        
-        
-        if (user != null) {
-            String storedHashedPassword = user.getString("password");
-            if (checkPassword(password, storedHashedPassword)) {
-                role = user.getString("role");
-                
-            if ( role.equalsIgnoreCase("admin")){
+
+        user = credentialCollection.find(Filters.eq("username", username)).first();
+
+        if (user == null) {
+            return null;
+        }
+
+        String storedHashedPassword = user.getString("password");
+        if (checkPassword(password, storedHashedPassword)) {
+            role = user.getString("role");
+
+            if (role.equalsIgnoreCase("admin")) {
                 return new Admin(username);
-            } else if (role.equalsIgnoreCase("employee")){
+            } else if (role.equalsIgnoreCase("employee")) {
                 return new Employee(username);
             }
-                
-            }
         }
-        
-        JOptionPane.showMessageDialog(null, "Intente de nuevo...", "Credenciales incorrectas", JOptionPane.INFORMATION_MESSAGE);
-        attempts++;
-        }
-        
-        JOptionPane.showMessageDialog(null, "Demasiados intentos fallidos. Acceso denegado.", "Credenciales incorrectas", JOptionPane.ERROR_MESSAGE);
+
         return null;
     }
 

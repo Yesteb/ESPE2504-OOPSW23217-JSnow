@@ -11,6 +11,7 @@ ec\edu\espe\jsnow\view\FrmLogin1.class
 ec\edu\espe\jsnow\view\FrmLogin1$1.class
 ec\edu\espe\jsnow\view\FrmLogin1$9.class
 ec\edu\espe\jsnow\model\Admin.class
+ec\edu\espe\jsnow\view\FrmRegister.class
 ec\edu\espe\jsnow\model\AuthSystem.class
 ec\edu\espe\jsnow\view\FrmEmployee.class
 ec\edu\espe\jsnow\view\FrmLogin1$11.class

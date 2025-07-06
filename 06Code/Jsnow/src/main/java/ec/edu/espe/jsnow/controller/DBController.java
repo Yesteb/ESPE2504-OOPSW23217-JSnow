@@ -10,7 +10,7 @@ import com.mongodb.client.MongoDatabase;
  */
 public class DBController {
 
-    private static final String URL = "mongodb+srv://esteban474sanchez:Yesteb@<cluster>.mongodb.net/?retryWrites=true&w=majority";
+    private static final String URL = "mongodb+srv://esteban474sanchez:Yesteb@cluster0.rpbnucr.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
     private static final String nameDB = "JSnow";
 
     private static MongoDatabase database;
