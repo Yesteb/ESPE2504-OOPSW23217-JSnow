@@ -1,23 +1,24 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package ec.edu.espe.jsnow.view;
+
+import java.awt.Color;
+
+
 
 /**
  *
- * @author esteb
+ * @author Yesteb Jsnow
+ * @author Jahir Sivinta Jsnow DCCO ESPE
  */
 public class FrmAdmin extends javax.swing.JFrame {
-    
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(FrmAdmin.class.getName());
 
     /**
-     * Creates new form FrmAdmin
+     * Creates new form FrmMenu
      */
     public FrmAdmin() {
         initComponents();
         setLocationRelativeTo(null);
+        setResizable(false);
     }
 
     /**
@@ -29,21 +30,288 @@ public class FrmAdmin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel4 = new javax.swing.JPanel();
+        jSeparator1 = new javax.swing.JSeparator();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        PnlReport = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        PnlRegister = new javax.swing.JPanel();
+        LblRegister = new javax.swing.JLabel();
+        PnlSignOut = new javax.swing.JPanel();
+        LblSignOut = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("KIARA ADMIN");
+        setIconImages(null);
+
+        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel1.setFont(new java.awt.Font("Roboto Condensed Light", 1, 36)); // NOI18N
+        jLabel1.setText("Kiara");
+
+        jLabel2.setFont(new java.awt.Font("Roboto Light", 1, 12)); // NOI18N
+        jLabel2.setText("ADMIN");
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
+        PnlReport.setBackground(new java.awt.Color(74, 74, 74));
+        PnlReport.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        PnlReport.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                PnlReportMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                PnlReportMouseExited(evt);
+            }
+        });
+
+        jLabel3.setFont(new java.awt.Font("Tw Cen MT", 1, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("GENERAR REPORTES");
+
+        javax.swing.GroupLayout PnlReportLayout = new javax.swing.GroupLayout(PnlReport);
+        PnlReport.setLayout(PnlReportLayout);
+        PnlReportLayout.setHorizontalGroup(
+            PnlReportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PnlReportLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel3)
+                .addGap(66, 66, 66))
+        );
+        PnlReportLayout.setVerticalGroup(
+            PnlReportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PnlReportLayout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addComponent(jLabel3)
+                .addContainerGap(31, Short.MAX_VALUE))
+        );
+
+        PnlRegister.setBackground(new java.awt.Color(74, 74, 74));
+        PnlRegister.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        PnlRegister.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                PnlRegisterMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                PnlRegisterMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                PnlRegisterMouseExited(evt);
+            }
+        });
+
+        LblRegister.setFont(new java.awt.Font("Tw Cen MT", 1, 18)); // NOI18N
+        LblRegister.setForeground(new java.awt.Color(255, 255, 255));
+        LblRegister.setText("CREAR NUEVO USUARIO");
+        LblRegister.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        LblRegister.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                LblRegisterMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                LblRegisterMouseEntered(evt);
+            }
+        });
+
+        javax.swing.GroupLayout PnlRegisterLayout = new javax.swing.GroupLayout(PnlRegister);
+        PnlRegister.setLayout(PnlRegisterLayout);
+        PnlRegisterLayout.setHorizontalGroup(
+            PnlRegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PnlRegisterLayout.createSequentialGroup()
+                .addContainerGap(59, Short.MAX_VALUE)
+                .addComponent(LblRegister)
+                .addGap(50, 50, 50))
+        );
+        PnlRegisterLayout.setVerticalGroup(
+            PnlRegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PnlRegisterLayout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addComponent(LblRegister)
+                .addContainerGap(36, Short.MAX_VALUE))
+        );
+
+        PnlSignOut.setBackground(new java.awt.Color(74, 74, 74));
+        PnlSignOut.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        PnlSignOut.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                PnlSignOutMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                PnlSignOutMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                PnlSignOutMouseExited(evt);
+            }
+        });
+
+        LblSignOut.setFont(new java.awt.Font("Tw Cen MT", 1, 18)); // NOI18N
+        LblSignOut.setForeground(new java.awt.Color(255, 255, 255));
+        LblSignOut.setText("CERRAR SESION");
+        LblSignOut.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        LblSignOut.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                LblSignOutMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                LblSignOutMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                LblSignOutMouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout PnlSignOutLayout = new javax.swing.GroupLayout(PnlSignOut);
+        PnlSignOut.setLayout(PnlSignOutLayout);
+        PnlSignOutLayout.setHorizontalGroup(
+            PnlSignOutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PnlSignOutLayout.createSequentialGroup()
+                .addGap(87, 87, 87)
+                .addComponent(LblSignOut)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        PnlSignOutLayout.setVerticalGroup(
+            PnlSignOutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PnlSignOutLayout.createSequentialGroup()
+                .addContainerGap(20, Short.MAX_VALUE)
+                .addComponent(LblSignOut)
+                .addGap(17, 17, 17))
+        );
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(88, 88, 88)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(PnlSignOut, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(PnlReport, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(PnlRegister, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(PnlReport, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(PnlRegister, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                .addComponent(PnlSignOut, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(15, 15, 15))
+        );
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(265, 265, 265)
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(102, 102, 102)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 539, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(72, Short.MAX_VALUE))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap(22, Short.MAX_VALUE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(17, 17, 17)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void PnlRegisterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PnlRegisterMouseClicked
+        new FrmRegister().setVisible(true);
+    }//GEN-LAST:event_PnlRegisterMouseClicked
+
+    private void LblRegisterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LblRegisterMouseClicked
+        new FrmRegister().setVisible(true);
+    }//GEN-LAST:event_LblRegisterMouseClicked
+
+    private void PnlRegisterMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PnlRegisterMouseEntered
+        PnlRegister.setBackground(new Color(117,92,92));
+    }//GEN-LAST:event_PnlRegisterMouseEntered
+
+    private void PnlReportMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PnlReportMouseEntered
+        PnlReport.setBackground(new Color(117,92,92));
+    }//GEN-LAST:event_PnlReportMouseEntered
+
+    private void PnlReportMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PnlReportMouseExited
+        PnlReport.setBackground(new Color(74,74,74));
+    }//GEN-LAST:event_PnlReportMouseExited
+
+    private void PnlRegisterMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PnlRegisterMouseExited
+        PnlRegister.setBackground(new Color(74,74,74));
+    }//GEN-LAST:event_PnlRegisterMouseExited
+
+    private void LblRegisterMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LblRegisterMouseEntered
+        PnlRegister.setBackground(new Color(117,92,92));
+    }//GEN-LAST:event_LblRegisterMouseEntered
+
+    private void LblSignOutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LblSignOutMouseClicked
+        dispose();
+        new FrmLogin().setVisible(true);
+    }//GEN-LAST:event_LblSignOutMouseClicked
+
+    private void LblSignOutMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LblSignOutMouseEntered
+      PnlSignOut.setBackground(new Color(117,92,92));
+    }//GEN-LAST:event_LblSignOutMouseEntered
+
+    private void PnlSignOutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PnlSignOutMouseClicked
+        dispose();
+        
+        new FrmLogin().setVisible(true);
+    }//GEN-LAST:event_PnlSignOutMouseClicked
+
+    private void PnlSignOutMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PnlSignOutMouseEntered
+       PnlSignOut.setBackground(new Color(117,92,92));
+    }//GEN-LAST:event_PnlSignOutMouseEntered
+
+    private void PnlSignOutMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PnlSignOutMouseExited
+       PnlSignOut.setBackground(new Color(74,74,74));
+    }//GEN-LAST:event_PnlSignOutMouseExited
+
+    private void LblSignOutMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LblSignOutMouseExited
+       LblSignOut.setBackground(new Color(74,74,74));
+    }//GEN-LAST:event_LblSignOutMouseExited
 
     /**
      * @param args the command line arguments
@@ -61,15 +329,51 @@ public class FrmAdmin extends javax.swing.JFrame {
                     break;
                 }
             }
-        } catch (ReflectiveOperationException | javax.swing.UnsupportedLookAndFeelException ex) {
-            logger.log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(FrmAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(FrmAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(FrmAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(FrmAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new FrmAdmin().setVisible(true));
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new FrmAdmin().setVisible(true);
+            }
+        });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel LblRegister;
+    private javax.swing.JLabel LblSignOut;
+    private javax.swing.JPanel PnlRegister;
+    private javax.swing.JPanel PnlReport;
+    private javax.swing.JPanel PnlSignOut;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JSeparator jSeparator1;
     // End of variables declaration//GEN-END:variables
 }

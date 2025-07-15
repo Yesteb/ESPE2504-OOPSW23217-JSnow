@@ -25,7 +25,7 @@ public class FrmRegister extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         txtUsername.setCaretPosition(0);
-        btnBack.requestFocus();
+        btnRegister.requestFocus();
     }
 
     /**
@@ -52,13 +52,12 @@ public class FrmRegister extends javax.swing.JFrame {
         LblUsuario2 = new javax.swing.JLabel();
         cmbRole = new javax.swing.JComboBox<>();
         jSeparator3 = new javax.swing.JSeparator();
-        btnBack = new javax.swing.JButton();
         jPanel7 = new javax.swing.JPanel();
         PnlExit = new javax.swing.JPanel();
         LblExit = new javax.swing.JLabel();
         LblUsuario1 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        btnRegister1 = new javax.swing.JButton();
+        btnRegister = new javax.swing.JButton();
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -230,31 +229,6 @@ public class FrmRegister extends javax.swing.JFrame {
                 .addContainerGap(20, Short.MAX_VALUE))
         );
 
-        btnBack.setBackground(new java.awt.Color(253, 155, 170));
-        btnBack.setFont(new java.awt.Font("Tw Cen MT", 1, 14)); // NOI18N
-        btnBack.setForeground(new java.awt.Color(51, 51, 51));
-        btnBack.setText("<- RETROCEDER");
-        btnBack.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        btnBack.setBorderPainted(false);
-        btnBack.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnBack.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnBack.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnBackMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btnBackMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnBackMouseExited(evt);
-            }
-        });
-        btnBack.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBackActionPerformed(evt);
-            }
-        });
-
         jPanel7.setBackground(new java.awt.Color(255, 255, 255));
         jPanel7.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
@@ -278,7 +252,7 @@ public class FrmRegister extends javax.swing.JFrame {
             .addGap(0, 29, Short.MAX_VALUE)
         );
 
-        PnlExit.setBackground(new java.awt.Color(251, 211, 212));
+        PnlExit.setBackground(new java.awt.Color(74, 74, 74));
         PnlExit.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 PnlExitMouseEntered(evt);
@@ -291,8 +265,9 @@ public class FrmRegister extends javax.swing.JFrame {
             }
         });
 
-        LblExit.setBackground(new java.awt.Color(251, 211, 212));
+        LblExit.setBackground(new java.awt.Color(74, 74, 74));
         LblExit.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 18)); // NOI18N
+        LblExit.setForeground(new java.awt.Color(255, 255, 255));
         LblExit.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         LblExit.setText("X");
         LblExit.setAlignmentY(0.0F);
@@ -329,31 +304,31 @@ public class FrmRegister extends javax.swing.JFrame {
         LblUsuario1.setText("KIARA.E");
 
         jLabel1.setFont(new java.awt.Font("Tw Cen MT", 1, 48)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(253, 137, 155));
+        jLabel1.setForeground(new java.awt.Color(74, 74, 74));
         jLabel1.setText("C");
 
-        btnRegister1.setBackground(new java.awt.Color(253, 155, 170));
-        btnRegister1.setFont(new java.awt.Font("Tw Cen MT", 1, 24)); // NOI18N
-        btnRegister1.setForeground(new java.awt.Color(51, 51, 51));
-        btnRegister1.setText("Registrar Usuario");
-        btnRegister1.setBorder(null);
-        btnRegister1.setBorderPainted(false);
-        btnRegister1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnRegister1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnRegister1.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnRegister.setBackground(new java.awt.Color(74, 74, 74));
+        btnRegister.setFont(new java.awt.Font("Tw Cen MT", 1, 24)); // NOI18N
+        btnRegister.setForeground(new java.awt.Color(255, 255, 255));
+        btnRegister.setText("Registrar Usuario");
+        btnRegister.setBorder(null);
+        btnRegister.setBorderPainted(false);
+        btnRegister.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnRegister.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnRegister.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnRegister1MouseClicked(evt);
+                btnRegisterMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btnRegister1MouseEntered(evt);
+                btnRegisterMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnRegister1MouseExited(evt);
+                btnRegisterMouseExited(evt);
             }
         });
-        btnRegister1.addActionListener(new java.awt.event.ActionListener() {
+        btnRegister.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRegister1ActionPerformed(evt);
+                btnRegisterActionPerformed(evt);
             }
         });
 
@@ -364,17 +339,15 @@ public class FrmRegister extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                            .addComponent(LblUsuario1)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jLabel1)
-                            .addGap(58, 58, 58))
-                        .addGroup(jPanel5Layout.createSequentialGroup()
-                            .addComponent(PnlExit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                        .addComponent(LblUsuario1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel1)
+                        .addGap(58, 58, 58))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(PnlExit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
@@ -382,7 +355,7 @@ public class FrmRegister extends javax.swing.JFrame {
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(128, 128, 128)
-                        .addComponent(btnRegister1, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
@@ -398,9 +371,8 @@ public class FrmRegister extends javax.swing.JFrame {
                 .addGap(29, 29, 29)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btnRegister1, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
-                .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(btnRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(95, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -416,10 +388,6 @@ public class FrmRegister extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnBackActionPerformed
 
     private void txtUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsernameActionPerformed
         // TODO add your handling code here:
@@ -450,7 +418,7 @@ public class FrmRegister extends javax.swing.JFrame {
     }//GEN-LAST:event_LblExitMousePressed
 
     private void LblExitMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LblExitMouseEntered
-        PnlExit.setBackground(Color.PINK);
+        PnlExit.setBackground(new Color(110,99,99));
     }//GEN-LAST:event_LblExitMouseEntered
 
     private void PnlExitMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PnlExitMousePressed
@@ -467,19 +435,12 @@ public class FrmRegister extends javax.swing.JFrame {
 
     private void LblExitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LblExitMouseClicked
         dispose();
+        
     }//GEN-LAST:event_LblExitMouseClicked
 
     private void LblExitMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LblExitMouseExited
-        PnlExit.setBackground(new Color(251, 211, 212));
+        PnlExit.setBackground(new Color(74, 74, 74));
     }//GEN-LAST:event_LblExitMouseExited
-
-    private void btnBackMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBackMouseEntered
-        btnBack.setBackground(Color.PINK);
-    }//GEN-LAST:event_btnBackMouseEntered
-
-    private void btnBackMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBackMouseExited
-        btnBack.setBackground(new Color(253, 155, 170));
-    }//GEN-LAST:event_btnBackMouseExited
 
     private void txtUsernameMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtUsernameMousePressed
         if (txtUsername.getText().equals("Ingrese un nombre para el usuario")) {
@@ -510,13 +471,6 @@ public class FrmRegister extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_formFocusGained
 
-    private void btnBackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBackMouseClicked
-         dispose();
-         new FrmAdmin().setVisible(true);
-
-        
-    }//GEN-LAST:event_btnBackMouseClicked
-
     private void jPanel7MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel7MousePressed
         Xmouse = evt.getX();
         Ymouse = evt.getY();
@@ -535,7 +489,7 @@ public class FrmRegister extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_cmbRoleActionPerformed
 
-    private void btnRegister1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRegister1MouseClicked
+    private void btnRegisterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRegisterMouseClicked
         boolean register;
         String password;
         String username;
@@ -561,28 +515,26 @@ public class FrmRegister extends javax.swing.JFrame {
             );
             txtUsername.requestFocusInWindow();
             txtUsername.setText("");
-            LblUsuario.setForeground(Color.red);
             return;
         }
         register = authSystem.register(username, password, role);
-        
-        if(register == true){
-            return;
-        }
-       
-    }//GEN-LAST:event_btnRegister1MouseClicked
+        txtUsername.setText("Ingrese un nombre para el usuario");
+        txtPassword.setText("***************************************");
+        txtPassword.setForeground(new Color(204, 204, 204));
+        txtUsername.setForeground(new Color(204, 204, 204));
+    }//GEN-LAST:event_btnRegisterMouseClicked
 
-    private void btnRegister1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRegister1MouseEntered
+    private void btnRegisterMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRegisterMouseEntered
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnRegister1MouseEntered
+    }//GEN-LAST:event_btnRegisterMouseEntered
 
-    private void btnRegister1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRegister1MouseExited
+    private void btnRegisterMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRegisterMouseExited
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnRegister1MouseExited
+    }//GEN-LAST:event_btnRegisterMouseExited
 
-    private void btnRegister1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegister1ActionPerformed
+    private void btnRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnRegister1ActionPerformed
+    }//GEN-LAST:event_btnRegisterActionPerformed
 
     /**
      * @param args the command line arguments
@@ -616,8 +568,7 @@ public class FrmRegister extends javax.swing.JFrame {
     private javax.swing.JLabel LblUsuario2;
     private javax.swing.JPanel PnlExit;
     private javax.swing.JSeparator SptUsuario;
-    private javax.swing.JButton btnBack;
-    private javax.swing.JButton btnRegister1;
+    private javax.swing.JButton btnRegister;
     private javax.swing.JComboBox<String> cmbRole;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
