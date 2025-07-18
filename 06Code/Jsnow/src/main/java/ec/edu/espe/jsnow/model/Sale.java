@@ -54,7 +54,7 @@ public class Sale {
         this.total = total;
     }
     
-    public static void registerSale(Product product){
+    public static void registerSale(){
         
     }
     

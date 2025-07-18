@@ -1,7 +1,7 @@
 package ec.edu.espe.jsnow.view;
 
 import ec.edu.espe.jsnow.model.Admin;
-import ec.edu.espe.jsnow.model.AuthSystem;
+import ec.edu.espe.jsnow.controller.AuthSystem;
 import ec.edu.espe.jsnow.model.Employee;
 import ec.edu.espe.jsnow.model.User;
 import java.awt.Color;

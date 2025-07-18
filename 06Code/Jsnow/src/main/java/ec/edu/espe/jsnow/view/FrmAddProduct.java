@@ -1,7 +1,12 @@
 
 package ec.edu.espe.jsnow.view;
 
-import javax.swing.JFrame;
+import ec.edu.espe.jsnow.controller.DBController;
+import ec.edu.espe.jsnow.controller.Inventory;
+import ec.edu.espe.jsnow.model.Product;
+import java.awt.Color;
+import java.time.LocalDateTime;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -32,21 +37,25 @@ public class FrmAddProduct extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         LblUsuario1 = new javax.swing.JLabel();
-        txtUsername1 = new javax.swing.JTextField();
+        txtName = new javax.swing.JTextField();
         SptUsuario1 = new javax.swing.JSeparator();
         LblUsuario2 = new javax.swing.JLabel();
         LblUsuario3 = new javax.swing.JLabel();
         LblUsuario4 = new javax.swing.JLabel();
-        jSpinner1 = new javax.swing.JSpinner();
+        spnAmount = new javax.swing.JSpinner();
         LblUsuario6 = new javax.swing.JLabel();
         LblUsuario7 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        cmbSize = new javax.swing.JComboBox<>();
         SptUsuario = new javax.swing.JSeparator();
         SptUsuario2 = new javax.swing.JSeparator();
         SptUsuario3 = new javax.swing.JSeparator();
-        txtUsername2 = new javax.swing.JTextField();
-        txtUsername3 = new javax.swing.JTextField();
-        txtUsername4 = new javax.swing.JTextField();
+        txtColor = new javax.swing.JTextField();
+        txtModel = new javax.swing.JTextField();
+        txtPrice = new javax.swing.JTextField();
+        btnSaveProduct = new javax.swing.JButton();
+        SptUsuario4 = new javax.swing.JSeparator();
+        LblUsuario5 = new javax.swing.JLabel();
+        txtId = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Añadir Producto");
@@ -58,14 +67,14 @@ public class FrmAddProduct extends javax.swing.JFrame {
         LblUsuario1.setFont(new java.awt.Font("Tw Cen MT", 1, 18)); // NOI18N
         LblUsuario1.setText("ID:");
 
-        txtUsername1.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
-        txtUsername1.setForeground(new java.awt.Color(204, 204, 204));
-        txtUsername1.setToolTipText("");
-        txtUsername1.setBorder(null);
-        txtUsername1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        txtUsername1.addActionListener(new java.awt.event.ActionListener() {
+        txtName.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
+        txtName.setForeground(new java.awt.Color(204, 204, 204));
+        txtName.setToolTipText("");
+        txtName.setBorder(null);
+        txtName.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        txtName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtUsername1ActionPerformed(evt);
+                txtNameActionPerformed(evt);
             }
         });
 
@@ -92,7 +101,7 @@ public class FrmAddProduct extends javax.swing.JFrame {
         LblUsuario7.setFont(new java.awt.Font("Tw Cen MT", 1, 18)); // NOI18N
         LblUsuario7.setText("PRECIO:");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cmbSize.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         SptUsuario.setBackground(new java.awt.Color(255, 255, 255));
         SptUsuario.setForeground(new java.awt.Color(0, 0, 0));
@@ -103,36 +112,75 @@ public class FrmAddProduct extends javax.swing.JFrame {
         SptUsuario3.setBackground(new java.awt.Color(255, 255, 255));
         SptUsuario3.setForeground(new java.awt.Color(0, 0, 0));
 
-        txtUsername2.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
-        txtUsername2.setForeground(new java.awt.Color(204, 204, 204));
-        txtUsername2.setToolTipText("");
-        txtUsername2.setBorder(null);
-        txtUsername2.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        txtUsername2.addActionListener(new java.awt.event.ActionListener() {
+        txtColor.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
+        txtColor.setForeground(new java.awt.Color(204, 204, 204));
+        txtColor.setToolTipText("");
+        txtColor.setBorder(null);
+        txtColor.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        txtColor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtUsername2ActionPerformed(evt);
+                txtColorActionPerformed(evt);
             }
         });
 
-        txtUsername3.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
-        txtUsername3.setForeground(new java.awt.Color(204, 204, 204));
-        txtUsername3.setToolTipText("");
-        txtUsername3.setBorder(null);
-        txtUsername3.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        txtUsername3.addActionListener(new java.awt.event.ActionListener() {
+        txtModel.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
+        txtModel.setForeground(new java.awt.Color(204, 204, 204));
+        txtModel.setToolTipText("");
+        txtModel.setBorder(null);
+        txtModel.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        txtModel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtUsername3ActionPerformed(evt);
+                txtModelActionPerformed(evt);
             }
         });
 
-        txtUsername4.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
-        txtUsername4.setForeground(new java.awt.Color(204, 204, 204));
-        txtUsername4.setToolTipText("");
-        txtUsername4.setBorder(null);
-        txtUsername4.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        txtUsername4.addActionListener(new java.awt.event.ActionListener() {
+        txtPrice.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
+        txtPrice.setForeground(new java.awt.Color(204, 204, 204));
+        txtPrice.setToolTipText("");
+        txtPrice.setBorder(null);
+        txtPrice.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        txtPrice.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtUsername4ActionPerformed(evt);
+                txtPriceActionPerformed(evt);
+            }
+        });
+
+        btnSaveProduct.setBackground(new java.awt.Color(248, 150, 150));
+        btnSaveProduct.setFont(new java.awt.Font("Tw Cen MT", 1, 14)); // NOI18N
+        btnSaveProduct.setText("GUARDAR PRODUCTO");
+        btnSaveProduct.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnSaveProduct.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnSaveProductMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnSaveProductMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnSaveProductMouseExited(evt);
+            }
+        });
+        btnSaveProduct.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSaveProductActionPerformed(evt);
+            }
+        });
+
+        SptUsuario4.setBackground(new java.awt.Color(255, 255, 255));
+        SptUsuario4.setForeground(new java.awt.Color(0, 0, 0));
+
+        LblUsuario5.setBackground(new java.awt.Color(18, 18, 18));
+        LblUsuario5.setFont(new java.awt.Font("Tw Cen MT", 1, 18)); // NOI18N
+        LblUsuario5.setText("NOMBRE DEL PRODUCTO:");
+
+        txtId.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
+        txtId.setForeground(new java.awt.Color(204, 204, 204));
+        txtId.setToolTipText("");
+        txtId.setBorder(null);
+        txtId.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        txtId.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtIdActionPerformed(evt);
             }
         });
 
@@ -140,110 +188,171 @@ public class FrmAddProduct extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addComponent(LblUsuario1)
+                .addGap(27, 27, 27)
+                .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(LblUsuario2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(spnAmount, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(48, 48, 48)
+                .addComponent(LblUsuario4)
+                .addGap(18, 18, 18)
+                .addComponent(cmbSize, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(37, 37, 37))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(33, 33, 33)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(SptUsuario2, javax.swing.GroupLayout.PREFERRED_SIZE, 591, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(32, 32, 32)
+                        .addComponent(LblUsuario6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtModel, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(LblUsuario3)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtColor, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGap(31, 31, 31)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(LblUsuario7)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(txtPrice))
+                                .addComponent(SptUsuario3, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnSaveProduct, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                            .addGap(25, 25, 25)
+                            .addComponent(SptUsuario2, javax.swing.GroupLayout.PREFERRED_SIZE, 591, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(SptUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 591, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(SptUsuario1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addComponent(LblUsuario6)
-                            .addGap(203, 203, 203)
-                            .addComponent(LblUsuario3)
-                            .addGap(18, 18, 18)
-                            .addComponent(txtUsername2, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addComponent(LblUsuario1)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(txtUsername1, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(41, 41, 41)
-                            .addComponent(LblUsuario2)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(55, 55, 55)
-                            .addComponent(LblUsuario4)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addComponent(LblUsuario7)
-                            .addGap(18, 18, 18)
-                            .addComponent(txtUsername4, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(SptUsuario3, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(25, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addGap(134, 134, 134)
-                    .addComponent(txtUsername3, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(369, Short.MAX_VALUE)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(LblUsuario5)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 372, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(SptUsuario4, javax.swing.GroupLayout.PREFERRED_SIZE, 591, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(SptUsuario1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(37, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(30, 30, 30)
+                .addGap(28, 28, 28)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LblUsuario5)
+                    .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(SptUsuario1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(SptUsuario4, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(LblUsuario1)
-                    .addComponent(txtUsername1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(LblUsuario2)
-                    .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(spnAmount, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(LblUsuario4)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(15, 15, 15)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(SptUsuario1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(SptUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(20, 20, 20)
+                    .addComponent(cmbSize, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(SptUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(LblUsuario6)
                     .addComponent(LblUsuario3)
-                    .addComponent(txtUsername2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtColor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtModel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(SptUsuario2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(LblUsuario7)
-                    .addComponent(txtUsername4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(SptUsuario3, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(27, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                    .addContainerGap(107, Short.MAX_VALUE)
-                    .addComponent(txtUsername3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(101, 101, 101)))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnSaveProduct, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(LblUsuario7)
+                            .addComponent(txtPrice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(SptUsuario3, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(42, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtUsername1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsername1ActionPerformed
+    private void txtNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtUsername1ActionPerformed
+    }//GEN-LAST:event_txtNameActionPerformed
 
-    private void txtUsername2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsername2ActionPerformed
+    private void txtColorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtColorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtUsername2ActionPerformed
+    }//GEN-LAST:event_txtColorActionPerformed
 
-    private void txtUsername3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsername3ActionPerformed
+    private void txtModelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtModelActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtUsername3ActionPerformed
+    }//GEN-LAST:event_txtModelActionPerformed
 
-    private void txtUsername4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsername4ActionPerformed
+    private void txtPriceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPriceActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtUsername4ActionPerformed
+    }//GEN-LAST:event_txtPriceActionPerformed
+
+    private void btnSaveProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveProductActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSaveProductActionPerformed
+
+    private void btnSaveProductMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSaveProductMouseEntered
+        btnSaveProduct.setBackground(new Color(167,255,167));
+    }//GEN-LAST:event_btnSaveProductMouseEntered
+
+    private void btnSaveProductMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSaveProductMouseExited
+        btnSaveProduct.setBackground(new Color(248,150,150));
+    }//GEN-LAST:event_btnSaveProductMouseExited
+
+    private void btnSaveProductMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSaveProductMouseClicked
+    LocalDateTime dateTime = LocalDateTime.now();
+    int id = Integer.parseInt(txtId.getText().trim());          
+    String name = txtName.getText().trim();
+    String model = txtModel.getText().trim();
+    float price = Float.parseFloat(txtPrice.getText().trim());
+    int amount = (int) spnAmount.getValue();
+    String color = txtColor.getText().trim();
+    String size = (String) cmbSize.getSelectedItem();
+    DBController dbController = new DBController(); 
+    Inventory inventory = new Inventory(dbController);
+    
+    Product product = new Product(dateTime, id, name, size, price, color, amount, model);
+
+    
+    inventory.addProduct(product);
+    
+    JOptionPane.showMessageDialog(
+            null
+            , "El producto se ha registrado con exito"
+            , "Añadir Producto"
+            , JOptionPane.INFORMATION_MESSAGE
+    );
+    }//GEN-LAST:event_btnSaveProductMouseClicked
+
+    private void txtIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtIdActionPerformed
 
     /**
      * @param args the command line arguments
@@ -275,18 +384,22 @@ public class FrmAddProduct extends javax.swing.JFrame {
     private javax.swing.JLabel LblUsuario2;
     private javax.swing.JLabel LblUsuario3;
     private javax.swing.JLabel LblUsuario4;
+    private javax.swing.JLabel LblUsuario5;
     private javax.swing.JLabel LblUsuario6;
     private javax.swing.JLabel LblUsuario7;
     private javax.swing.JSeparator SptUsuario;
     private javax.swing.JSeparator SptUsuario1;
     private javax.swing.JSeparator SptUsuario2;
     private javax.swing.JSeparator SptUsuario3;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JSeparator SptUsuario4;
+    private javax.swing.JButton btnSaveProduct;
+    private javax.swing.JComboBox<String> cmbSize;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JSpinner jSpinner1;
-    private javax.swing.JTextField txtUsername1;
-    private javax.swing.JTextField txtUsername2;
-    private javax.swing.JTextField txtUsername3;
-    private javax.swing.JTextField txtUsername4;
+    private javax.swing.JSpinner spnAmount;
+    private javax.swing.JTextField txtColor;
+    private javax.swing.JTextField txtId;
+    private javax.swing.JTextField txtModel;
+    private javax.swing.JTextField txtName;
+    private javax.swing.JTextField txtPrice;
     // End of variables declaration//GEN-END:variables
 }
